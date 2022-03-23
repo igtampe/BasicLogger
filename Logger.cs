@@ -1,4 +1,6 @@
-﻿namespace Igtampe.BasicLogger {
+﻿using System;
+
+namespace Igtampe.BasicLogger {
 
     /// <summary>Severity enum for any events logged by BasicLogger</summary>
     public enum LogSeverity { 
@@ -29,7 +31,10 @@
 
         /// <summary>Creates a logger with minimum log severity</summary>
         /// <param name="MinSeverity">Minimum severity a log item needs to be logged</param>
-        public Logger(LogSeverity MinSeverity) => this.MinSeverity = MinSeverity;
+        public Logger(LogSeverity MinSeverity) { 
+            this.MinSeverity = MinSeverity;
+            Debug("Initialized logger");
+        }
 
         /// <summary>Whether or not this severity is loggable when compared to this logger's minimum loggable severity</summary>
         /// <param name="Severity"></param>

@@ -1,4 +1,7 @@
 ﻿using Igtampe.BasicRender;
+using System;
+using System.Collections.Generic;
+using System.IO;
 
 namespace Igtampe.BasicLogger {
 
@@ -40,7 +43,6 @@ namespace Igtampe.BasicLogger {
             if (OutputFile != null) { using (var Pen = File.AppendText(OutputFile)) { Pen.WriteLine(OutText); }; }
             if (OutputText != null) { OutputText.WriteLine(OutText); }
 
-            OutputText.WriteLine(LogText);
             var ColorPair = SeverityColorDictionary[Severity];
             Draw.Sprite(Enum.GetName(typeof(LogSeverity), Severity), ColorPair.Item2, ColorPair.Item1);
             Draw.Sprite($" {LogText}", Console.BackgroundColor, ColorPair.Item2);
