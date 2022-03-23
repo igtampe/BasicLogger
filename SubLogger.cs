@@ -21,6 +21,6 @@
         /// <summary>Sends a request to log to the configured parent logger</summary>
         /// <param name="Severity"></param>
         /// <param name="LogItem"></param>
-        protected override void WriteLog(LogSeverity Severity, string LogItem) => Parent.Log(Severity, $"({Name}) {LogItem}");
+        protected override void WriteLog(LogSeverity Severity, string LogItem) => Parent?.Log(Severity, $"({Name}) {LogItem}");
     }
 }
