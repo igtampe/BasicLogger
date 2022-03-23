@@ -6,7 +6,7 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Authors>Igtampe</Authors>
     <Company>Igtampe</Company>
-    <Product>BasicLogger</Product>
+    <Product>Igtampe.BasicLogger</Product>
     <Description>BasicLogger is a *very very simple* logger which can output log files, and most importantly can log to the console using BasicRender.</Description>
     <Copyright>(C)2022 Igtampe, No Rights Reserved</Copyright>
     <PackageProjectUrl>https://github.com/igtampe/BasicLogger</PackageProjectUrl>
@@ -15,13 +15,13 @@
     <PackageTags>Logger, Console</PackageTags>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageIcon>BasicLogger.png</PackageIcon>
+    <PackageId>Igtampe.$(AssemblyName)</PackageId>
+    <AssemblyName>Igtampe.$(MSBuildProjectName)</AssemblyName>
+    <RootNamespace>Igtampe.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
+    <PackageLicenseExpression>CC0-1.0</PackageLicenseExpression>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="..\BasicRender\README.md">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
     <None Include="A:\Pictures\Program Resources\BasicLogger\BasicLogger.png">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
@@ -30,6 +30,13 @@
 
   <ItemGroup>
     <PackageReference Include="Igtampe.BasicRender" Version="1.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
