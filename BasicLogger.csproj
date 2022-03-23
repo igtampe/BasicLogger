@@ -3,6 +3,16 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Authors>Igtampe</Authors>
+    <Company>Igtampe</Company>
+    <Product>BasicLogger</Product>
+    <Description>BasicLogger is a *very very simple* logger which can output log files, and most importantly can log to the console using BasicRender.</Description>
+    <Copyright>(C)2022 Igtampe, No Rights Reserved</Copyright>
+    <PackageProjectUrl>https://github.com/igtampe/BasicLogger</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/igtampe/BasicLogger</RepositoryUrl>
+    <RepositoryType>Git</RepositoryType>
+    <PackageTags>Logger, Console</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
