@@ -46,6 +46,7 @@ namespace Igtampe.BasicLogger {
             var ColorPair = SeverityColorDictionary[Severity];
             Draw.Sprite(Enum.GetName(typeof(LogSeverity), Severity), ColorPair.Item2, ColorPair.Item1);
             Draw.Sprite($" {LogText}", Console.BackgroundColor, ColorPair.Item2);
+            Console.WriteLine();
 
         }
     }
