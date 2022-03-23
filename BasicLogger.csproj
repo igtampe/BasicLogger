@@ -13,7 +13,20 @@
     <RepositoryUrl>https://github.com/igtampe/BasicLogger</RepositoryUrl>
     <RepositoryType>Git</RepositoryType>
     <PackageTags>Logger, Console</PackageTags>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageIcon>BasicLogger.png</PackageIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\BasicRender\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="A:\Pictures\Program Resources\BasicLogger\BasicLogger.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Igtampe.BasicRender" Version="1.1.0" />
