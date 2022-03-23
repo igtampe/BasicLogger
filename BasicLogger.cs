@@ -44,9 +44,19 @@ namespace Igtampe.BasicLogger {
             if (OutputText != null) { OutputText.WriteLine(OutText); }
 
             var ColorPair = SeverityColorDictionary[Severity];
-            Draw.Sprite(Enum.GetName(typeof(LogSeverity), Severity), ColorPair.Item2, ColorPair.Item1);
-            Draw.Sprite($" {LogText}", Console.BackgroundColor, ColorPair.Item2);
-            Console.WriteLine();
+            
+            string TypePrefix = Enum.GetName(typeof(LogSeverity), Severity);
+            TypePrefix += new string(' ', 7 - TypePrefix.Length);
+
+            Draw.Sprite(TypePrefix, ColorPair.Item2, ColorPair.Item1);
+            //Draw.Sprite($" {LogText}", Console.BackgroundColor, ColorPair.Item2);
+            //We have to manuallg console writeline this because of the overscan stuff.
+
+            ConsoleColor OldFG = Console.ForegroundColor;
+
+            RenderUtils.Color(Console.BackgroundColor, ColorPair.Item2);
+            Console.WriteLine($" {LogText}");
+            RenderUtils.Color(Console.BackgroundColor, OldFG);
 
         }
     }
