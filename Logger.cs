@@ -39,7 +39,7 @@ namespace Igtampe.BasicLogger {
         /// <summary>Whether or not this severity is loggable when compared to this logger's minimum loggable severity</summary>
         /// <param name="Severity"></param>
         /// <returns></returns>
-        protected bool Loggable(LogSeverity Severity) => Severity < MinSeverity;
+        protected bool Loggable(LogSeverity Severity) => Severity <= MinSeverity;
 
         /// <summary>Logs a Fatal error</summary>
         /// <param name="Text"></param>
@@ -65,7 +65,7 @@ namespace Igtampe.BasicLogger {
         /// <param name="E"></param>
         /// <param name="Severity"></param>
         public virtual void Exception(Exception E, LogSeverity Severity = LogSeverity.ERROR) 
-            => Log(Severity, $"{E}\n\n{E.StackTrace}");
+            => Log(Severity, $"{E}");
 
         /// <summary>Log something</summary>
         /// <param name="Severity"></param>
