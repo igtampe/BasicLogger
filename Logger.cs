@@ -56,6 +56,12 @@
         /// <param name="Text"></param>
         public virtual void Debug(string Text) => Log(LogSeverity.DEBUG, Text);
 
+        /// <summary>Logs an Exception</summary>
+        /// <param name="E"></param>
+        /// <param name="Severity"></param>
+        public virtual void Exception(Exception E, LogSeverity Severity = LogSeverity.ERROR) 
+            => Log(Severity, $"{E}\n\n{E.StackTrace}");
+
         /// <summary>Log something</summary>
         /// <param name="Severity"></param>
         /// <param name="LogItem"></param>
