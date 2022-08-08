@@ -26,6 +26,12 @@ namespace Igtampe.BasicLogger {
             try { StackedError(2); } catch (Exception E) { SubLogger.Exception(E, LogSeverity.FATAL); }
             try { StackedError(2); } catch (Exception E) { SubLogger.Exception(E, LogSeverity.INFO); }
 
+            //Print 50 of them
+            for (int i = 0; i < 25; i++) {
+                SubLogger.Debug("This is debug information");
+                SubLogger.Info("This is Info information");
+            }
+
             Console.WriteLine();
             Console.WriteLine("This concludes the demo");
             Console.ReadLine();
